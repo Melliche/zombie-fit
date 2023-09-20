@@ -15,11 +15,12 @@
     </head>
     <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="{{ path('app_home') }}">Home</a></li>
-                <li><a href="{{ path('app_register') }}">Register</a></li>
-                <li><a href="{{ path('app_login') }}">Login</a></li>
+        <nav class="bg-[#0f1b09]">
+            <ul class="flex gap-20 w-9/12 m-auto items-center">
+                <li><a class="text-2xl text-[#9fc53a]" href="{{ path('app_home') }}"><img class="w-24" src="{{asset("uploads/logo_zombie_fit.png")}}"></a></li>
+                <li><a class="text-2xl text-[#9fc53a] font-semibold" href="{{ path('app_register') }}">Register</a></li>
+                <li><a class="text-2xl text-[#9fc53a] font-semibold" href="{{ path('app_login') }}">Login</a></li>
+                <li></li>
             </ul>
         </nav>
     </header>
@@ -29,7 +30,13 @@
     </main>
 
     <footer>
-        <p>Footer</p>
+        <div class="bg-[#0f1b09]">
+            <div class="w-9/12 m-auto flex">
+                <a class="text-2xl text-[#9fc53a]" href="{{ path('app_home') }}"><img class="w-24" src="{{asset("uploads/logo_zombie_fit.png")}}"></a>
+                <div>
+                </div>
+            </div>
+        </div>
     </footer>
 
     </body>
