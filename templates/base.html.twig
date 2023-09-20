@@ -15,21 +15,23 @@
     </head>
     <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="{{ path('app_home') }}">Home</a></li>
-            </ul>
-            <ul>
-                {# Si l'utilisateur est connecté #}
-                {% if app.user %}
-                    <li><a href="{{ path('app_logout') }}">Logout</a></li>
-                    <li><a href="{{ path('app_profile') }}">Profile</a></li>
-                {% else %}
-                    <li><a href="{{ path('app_login') }}">Connection</a></li>
-                    <li><a href="{{ path('app_register') }}">Register</a></li>
-                {% endif %}
-            </ul>
-        </nav>
+        <div class="bg-[#0f1b09]">
+            <nav class="flex w-9/12 m-auto">
+                <ul>
+                    <li><a href="{{ path('app_home') }}"><img class="w-24" src="{{asset("uploads/logo_zombie_fit.png")}}"></a></li>
+                </ul>
+                <ul class="flex gap-20 m-auto">
+                    {# Si l'utilisateur est connecté #}
+                    {% if app.user %}
+                        <li><a class="text-2xl text-[#9fc53a]" href="{{ path('app_logout') }}">Logout</a></li>
+                        <li><a class="text-2xl text-[#9fc53a]" href="{{ path('app_profile') }}">Profile</a></li>
+                    {% else %}
+                        <li><a class="text-2xl text-[#9fc53a]" href="{{ path('app_login') }}">Connection</a></li>
+                        <li><a class="text-2xl text-[#9fc53a]" href="{{ path('app_register') }}">Register</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
