@@ -15,4 +15,7 @@ class CourseController extends AbstractController
             'controller_name' => 'CourseController',
         ]);
     }
+
+
+    // FAIRE FIXTURES TEST ET QUESTIONS ET LIER TEST ET COURS
 }

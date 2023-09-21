@@ -6,4 +6,12 @@
 
     <h2>{{ user.email }}</h2>
 
+    {% for course in courses %}
+
+        <a href="{{ path('app_course', {'id': course.id} )}}">{{ course.name }}</a>
+
+
+    {% endfor %}
+
+
 {% endblock %}

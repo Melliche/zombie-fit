@@ -18,8 +18,12 @@ class Course
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\OneToMany(mappedBy: 'course', targetEntity: chapter::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'course', targetEntity: Chapter::class, orphanRemoval: true)]
     private Collection $chapters;
+
+    #[ORM\OneToOne(inversedBy: 'course', cascade: ['persist', 'remove'])]
+    #[ORM\JoinColumn(nullable: true)]
+    private ?Test $test = null;
 
     public function __construct()
     {
@@ -69,6 +73,18 @@ class Course
                 $chapter->setCourse(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getTest(): ?Test
+    {
+        return $this->test;
+    }
+
+    public function setTest(Test $test): static
+    {
+        $this->test = $test;
 
         return $this;
     }
