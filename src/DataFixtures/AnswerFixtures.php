@@ -11,22 +11,22 @@ class AnswerFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         $answer = new \App\Entity\Answer();
-        $answer->setName('Zombie-ANS-11');
+        $answer->setName('Aliments en conserve, aliments déshydratés, céréales complètes');
         $answer->setValid(true);
         $manager->persist($answer);
-        $this->addReference('chapter-zombie-run-1-answer', $answer);
+        $this->addReference('chapter-preparation-et-securite-1-answer', $answer);
 
         $answer2 = new \App\Entity\Answer();
-        $answer2->setName('Zombie-ANS-12');
+        $answer2->setName('Viande fraîche, légumes crus, fruits mûrs');
         $answer2->setValid(false);
         $manager->persist($answer2);
-        $this->addReference('chapter-zombie-run-12-answer', $answer2);
+        $this->addReference('chapter-preparation-et-securite-3-answer', $answer2);
 
         $answer3 = new \App\Entity\Answer();
-        $answer3->setName('Zombie-ANS-13');
+        $answer3->setName('Produits laitiers, pain frais, œufs crus');
         $answer3->setValid(false);
         $manager->persist($answer3);
-        $this->addReference('chapter-zombie-run-13-answer', $answer3);
+        $this->addReference('chapter-preparation-et-securite-3-answer', $answer3);
 
         $answer2 = new \App\Entity\Answer();
         $answer2->setName('Zombie-ANS-21');

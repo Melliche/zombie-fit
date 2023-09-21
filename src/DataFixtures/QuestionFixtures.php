@@ -11,7 +11,7 @@ class QuestionFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         $question = new \App\Entity\Question();
-        $question->setName('Zombie-QUES-1');
+        $question->setName("Quels sont des exemples d'aliments à longue conservation ?");
         $question->addAnswer($this->getReference('chapter-zombie-run-1-answer'));
         $question->addAnswer($this->getReference('chapter-zombie-run-12-answer'));
         $question->addAnswer($this->getReference('chapter-zombie-run-13-answer'));
