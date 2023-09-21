@@ -7,18 +7,23 @@
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    <form action="{{ path('app_login') }}" method="post">
-        <label for="username">Email:</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}">
+    <section class="bg-[#9fc53a] py-[100px]">
+        <div class="m-auto w-[30%] bg-[#0F1b09] rounded-[10%]">
+            <h2 class="text-[#9fc53a] text-center font-semibold text-[30px] pt-[10%] mb-[10%] uppercase">Connexion</h2>
+            <form class="flex flex-col" action="{{ path('app_login') }}" method="post">
+                <label class="text-[#9fc53a] ml-[30px] mb-[10px]" for="username">Email:</label>
+                <input class="bg-[#9fc53a] rounded mx-[30px] mb-[10%]" type="text" id="username" name="_username" value="{{ last_username }}">
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="_password">
+                <label class="text-[#9fc53a] ml-[30px] mb-[10px]" for="password">Password:</label>
+                <input class="bg-[#9fc53a] rounded mx-[30px] mb-[10%]" type="password" id="password" name="_password">
 
-        {# If you want to control the URL the user is redirected to on success
-        <input type="hidden" name="_target_path" value="/account"> #}
+                {# If you want to control the URL the user is redirected to on success
+                <input type="hidden" name="_target_path" value="/account"> #}
 
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-        <button type="submit">login</button>
-    </form>
+                <button class="text-[25px] rounded-full bg-[#9fc53a] text-[#0F1b09] px-[30px] m-auto mb-[10%]" type="submit">Login</button>
+            </form>
+        </div>
+    </section>
 {% endblock %}
