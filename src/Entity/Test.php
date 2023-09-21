@@ -18,8 +18,11 @@ class Test
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\OneToMany(mappedBy: 'test', targetEntity: question::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'test', targetEntity: Question::class, orphanRemoval: true)]
     private Collection $questions;
+
+    #[ORM\OneToOne(mappedBy: 'test', cascade: ['persist', 'remove'])]
+    private ?Course $course = null;
 
     public function __construct()
     {
@@ -69,6 +72,23 @@ class Test
                 $question->setTest(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCourse(): ?Course
+    {
+        return $this->course;
+    }
+
+    public function setCourse(Course $course): static
+    {
+        // set the owning side of the relation if necessary
+        if ($course->getTest() !== $this) {
+            $course->setTest($this);
+        }
+
+        $this->course = $course;
 
         return $this;
     }

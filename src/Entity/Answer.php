@@ -19,6 +19,10 @@ class Answer
     #[ORM\Column]
     private ?bool $valid = null;
 
+    #[ORM\ManyToOne(inversedBy: 'answers')]
+    #[ORM\JoinColumn(nullable: true)]
+    private ?Question $question = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +48,28 @@ class Answer
     public function setValid(bool $valid): static
     {
         $this->valid = $valid;
+
+        return $this;
+    }
+
+    public function getQuestion(): ?Question
+    {
+        return $this->question;
+    }
+
+    public function setQuestion(?Question $question): static
+    {
+        // unset the owning side of the relation if necessary
+        if ($question === null && $this->question !== null) {
+            $this->question->addAnswer(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($question !== null && $question->getAnswers() !== $this) {
+            $question->addAnswer($this);
+        }
+
+        $this->question = $question;
 
         return $this;
     }
