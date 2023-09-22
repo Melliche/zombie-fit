@@ -10,24 +10,34 @@
     <h2>{{ chapter.name }}</h2>
         <p>{{ chapter.description }}</p>
         <br>
-
     {% endfor %}
 
     <br>
 
-    {% for question in questions %}
-        <h2>{{ question.name }}</h2>
-        {% for answer in question.answers %}
-            <p>{{ answer.name }}</p>
+    {% if error_message %}
+        <div class="text-red-500">
+            {{ error_message }}
+        </div>
+    {% endif %}
+
+    <form method="post" action="{{ path('app_course', {id: id}) }}">
+        {% for question in questions %}
+            <h2>{{ question.name }}</h2>
+            {% for answer in question.answers %}
+
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="{{ question.id }}" value="{{ answer.id }}">
+                        {{ answer.name }}
+                    </label>
+                </div>
+            {% endfor %}
         {% endfor %}
-    {% endfor %}
-
+        <button type="submit">Submit</button>
+    </form>
     <br>
 
-    <button>Submit test</button>
-
     <br>
-
-
+    <br>
 
 {% endblock %}

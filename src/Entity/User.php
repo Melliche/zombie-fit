@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -28,6 +29,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column]
     private ?string $password = null;
+
+    #[ORM\Column(type: Types::ARRAY, nullable: true)]
+    private ?array $CompleteCourses = null;
 
     public function getId(): ?int
     {
@@ -97,5 +101,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function getCompleteCourses(): ?array
+    {
+        return $this->CompleteCourses;
+    }
+
+    public function setCompleteCourses(?array $CompleteCourses): static
+    {
+        $this->CompleteCourses = $CompleteCourses;
+
+        return $this;
     }
 }

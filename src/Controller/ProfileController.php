@@ -21,28 +21,21 @@ class ProfileController extends AbstractController
          }
 
          $courses = $courseRepository->findAll();
+        $totalCourses = count($courses);
+
+        $completeCourses = $user->getCompleteCourses();
+        $completedCount = count($completeCourses);
+
+        $completionPercentage = 0;
+        if ($totalCourses > 0) {
+            $completionPercentage = ($completedCount / $totalCourses) * 100;
+        }
 
         return $this->render('profile/index.html.twig', [
             'controller_name' => 'ProfileController',
             'user' => $user,
             'courses' => $courses,
-        ]);
-    }
-
-    #[Route('/course/{id}', name: 'app_course')]
-    public function course(CourseRepository $courseRepository, ChapterRepository $chapterRepository, $id): Response
-    {
-        $course = $courseRepository->find($id);
-        $chapters = $course->getChapters();
-        $test = $course->getTest();
-        $questions = $test->getQuestions();
-
-
-        return $this->render('course/index.html.twig', [
-            'controller_name' => 'CourseController',
-            'course' => $course,
-            'chapters' => $chapters,
-            'questions' => $questions,
+            'completionPercentage' => $completionPercentage,
         ]);
     }
 
