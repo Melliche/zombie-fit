@@ -26,7 +26,7 @@
         </div>
     {% endif %}
 
-    <form method="post" action="{{ path('app_course', {id: id}) }}">
+    <form class="mx-44" method="post" action="{{ path('app_course', {id: id}) }}">
         {% for question in questions %}
             <h2 class="text-[30px] font-semibold text-[#0F1b09]">{{ question.name }}</h2>
             {% for answer in question.answers %}
@@ -39,7 +39,7 @@
                 </div>
             {% endfor %}
         {% endfor %}
-        <button type="submit" class="text-[25px] rounded-full text-[#0F1b09] bg-[#9fc53a] border-2 border-black px-[30px] m-auto mb-[10%]">Submit</button>
+        <button type="submit" class="text-[25px] rounded-full mt-6 text-[#0F1b09] bg-[#9fc53a] border-2 border-black px-[30px] m-auto mb-[10%]">Submit</button>
     </form>
     <br>
     </section>

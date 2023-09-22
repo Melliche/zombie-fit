@@ -23,11 +23,11 @@
                 <ul class="flex gap-20 m-auto">
                     {# Si l'utilisateur est connecté #}
                     {% if app.user %}
-                        <li><a class="text-2xl text-[#9fc53a]" href="{{ path('app_logout') }}">Logout</a></li>
-                        <li><a class="text-2xl text-[#9fc53a]" href="{{ path('app_profile') }}">Profile</a></li>
+                        <li><a class="text-2xl text-[#9fc53a]" href="{{ path('app_logout') }}">Deconnexion</a></li>
+                        <li><a class="text-2xl text-[#9fc53a]" href="{{ path('app_profile') }}">Profil</a></li>
                     {% else %}
                         <li><a class="text-2xl text-[#9fc53a]" href="{{ path('app_login') }}">Connexion</a></li>
-                        <li><a class="text-2xl text-[#9fc53a]" href="{{ path('app_register') }}">Register</a></li>
+                        <li><a class="text-2xl text-[#9fc53a]" href="{{ path('app_register') }}">Inscription</a></li>
                     {% endif %}
                 </ul>
             </nav>
