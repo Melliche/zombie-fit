@@ -18,22 +18,31 @@
 
             <br>
 
-            {% for question in questions %}
-                <h2 class="text-[30px] font-semibold text-[#0F1b09]">{{ question.name }}</h2>
-                {% for answer in question.answers %}
-                    <div class="flex">
-                        <p>{{ answer.name }}</p>
-                    </div>
-                {% endfor %}
-            {% endfor %}
-
-            <br>
-
-            <button class="text-[25px] rounded-full text-[#0F1b09] bg-[#9fc53a] border-2 border-black px-[30px] m-auto mb-[10%]">Submit test</button>
-
-            <br>
-
         </div>
+
+    {% if error_message %}
+        <div class="text-red-500">
+            {{ error_message }}
+        </div>
+    {% endif %}
+
+    <form method="post" action="{{ path('app_course', {id: id}) }}">
+        {% for question in questions %}
+            <h2 class="text-[30px] font-semibold text-[#0F1b09]">{{ question.name }}</h2>
+            {% for answer in question.answers %}
+
+                <div class="flex">
+                    <label>
+                        <input type="radio" name="{{ question.id }}" value="{{ answer.id }}">
+                        {{ answer.name }}
+                    </label>
+                </div>
+            {% endfor %}
+        {% endfor %}
+        <button type="submit" class="text-[25px] rounded-full text-[#0F1b09] bg-[#9fc53a] border-2 border-black px-[30px] m-auto mb-[10%]">Submit</button>
+    </form>
+    <br>
     </section>
+
 
 {% endblock %}
