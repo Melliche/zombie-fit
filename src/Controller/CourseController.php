@@ -57,6 +57,8 @@ class CourseController extends AbstractController
                         $entityManager = $doctrine->getManager();
                         $entityManager->persist($user);
                         $entityManager->flush();
+                        return $this->redirectToRoute('app_profile');
+
                     }
 
 

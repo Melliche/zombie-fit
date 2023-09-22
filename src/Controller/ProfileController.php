@@ -24,6 +24,9 @@ class ProfileController extends AbstractController
         $totalCourses = count($courses);
 
         $completeCourses = $user->getCompleteCourses();
+        if ($completeCourses === null) {
+            $completeCourses = [];
+        }
         $completedCount = count($completeCourses);
 
         $completionPercentage = 0;

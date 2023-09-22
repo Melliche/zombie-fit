@@ -36,25 +36,25 @@ class QuestionFixtures extends Fixture
 
         $question4 = new \App\Entity\Question();
         $question4->setName("Quels sont les avantages des choix alimentaires tels que les conserves, les aliments déshydratés et les légumineuses en situation de survie ?");
-        $question4->addAnswer($this->getReference('chapter-approvisionnement-1-answer'));
-        $question4->addAnswer($this->getReference('chapter-approvisionnement-2-answer'));
-        $question4->addAnswer($this->getReference('chapter-approvisionnement-3-answer'));
+        $question4->addAnswer($this->getReference('chapter-approvisionnement-alimentation-41-answer'));
+        $question4->addAnswer($this->getReference('chapter-approvisionnement-alimentation-42-answer'));
+        $question4->addAnswer($this->getReference('chapter-approvisionnement-alimentation-43-answer'));
         $manager->persist($question4);
         $this->addReference('chapter-approvisionnement-alimentation-1-question', $question4);
 
         $question5 = new \App\Entity\Question();
         $question5->setName("Quelles sont les compétences essentielles pour chasser avec succès en milieu sauvage ?");
-        $question5->addAnswer($this->getReference('chapter-milieu-sauvage-1-answer'));
-        $question5->addAnswer($this->getReference('chapter-milieu-sauvage-2-answer'));
-        $question5->addAnswer($this->getReference('chapter-milieu-sauvage-3-answer'));
+        $question5->addAnswer($this->getReference('chapter-approvisionnement-alimentation-51-answer'));
+        $question5->addAnswer($this->getReference('chapter-approvisionnement-alimentation-52-answer'));
+        $question5->addAnswer($this->getReference('chapter-approvisionnement-alimentation-53-answer'));
         $manager->persist($question5);
         $this->addReference('chapter-approvisionnement-alimentation-2-question', $question5);
 
         $question6 = new \App\Entity\Question();
         $question6->setName("Pourquoi une gestion efficace des ressources alimentaires et hydriques est-elle cruciale en période de crise ?");
-        $question6->addAnswer($this->getReference('chapter-gestion-ressources-1-answer'));
-        $question6->addAnswer($this->getReference('chapter-gestion-ressources-2-answer'));
-        $question6->addAnswer($this->getReference('chapter-gestion-ressources-3-answer'));
+        $question6->addAnswer($this->getReference('chapter-approvisionnement-alimentation-61-answer'));
+        $question6->addAnswer($this->getReference('chapter-approvisionnement-alimentation-62-answer'));
+        $question6->addAnswer($this->getReference('chapter-approvisionnement-alimentation-63-answer'));
         $manager->persist($question6);
         $this->addReference('chapter-approvisionnement-alimentation-3-question', $question6);
 
