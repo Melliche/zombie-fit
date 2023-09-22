@@ -23,12 +23,12 @@ class Course extends Fixture implements DependentFixtureInterface
         $manager->persist($course);
 
         $course2 = new \App\Entity\Course();
-        $course2->setName('Zombie-RUN');
+        $course2->setName('Approvisionnement et Alimentation');
 
-        $course2->addChapter($this->getReference('chapter-zombie-run-1'));
-        $course2->addChapter($this->getReference('chapter-zombie-run-2'));
-        $course2->addChapter($this->getReference('chapter-zombie-run-3'));
-        $course2->setTest($this->getReference('test-zombie-run'));
+        $course2->addChapter($this->getReference('chapter-approvisionnement-alimentation-1'));
+        $course2->addChapter($this->getReference('chapter-approvisionnement-alimentation-2'));
+        $course2->addChapter($this->getReference('chapter-approvisionnement-alimentation-3'));
+        $course2->setTest($this->getReference('test-approvisionnement-alimentation'));
 
         $manager->persist($course2);
 

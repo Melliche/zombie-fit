@@ -31,6 +31,27 @@ class Chapter extends Fixture
         $manager->persist($chapter3);
         $this->addReference('chapter-preparation-et-securite-3', $chapter3);
 
+        $chapter4 = new \App\Entity\Chapter();
+        $chapter4->setName("Approvisionnement en Nourriture et en Eau");
+        $chapter4->setDescription("Sélection Éclairée : Apprendre à choisir des aliments qui ont une durée de conservation prolongée, comme les conserves, les aliments déshydratés et les légumineuses. Ces choix alimentaires sont riches en nutriments et ont une durée de conservation prolongée, ce qui en fait des sources fiables de nourriture.
+        Techniques de Chasse Responsable : Maîtriser les techniques de chasse responsables est essentiel. Cela inclut la reconnaissance des traces d'animaux, le suivi et les techniques d'approche pour maximiser les chances de succès. La chasse éthique garantit une utilisation responsable des ressources animales.");
+        $manager->persist($chapter4);
+        $this->addReference('chapter-approvisionnement-alimentation-1', $chapter4);
+
+        $chapter5 = new \App\Entity\Chapter();
+        $chapter5->setName('Chasse, Pêche et Agriculture de Survie');
+        $chapter5->setDescription("Identification des Proies: Pour chasser avec succès, il est essentiel de savoir identifier les animaux qui peuvent être chassés pour leur viande. Cela inclut la reconnaissance des espèces locales et de leurs habitudes.
+        Techniques de Pistage: Les compétences de pistage sont cruciales pour suivre les animaux en toute discrétion. Cela implique d'apprendre à reconnaître les empreintes, les traces et les signes de passage, ainsi que de comprendre les schémas de déplacement des animaux.");
+        $manager->persist($chapter5);
+        $this->addReference('chapter-approvisionnement-alimentation-2', $chapter5);
+
+        $chapter6 = new \App\Entity\Chapter();
+        $chapter6->setName("Gestion des Ressources et du Ravitaillement");
+        $chapter6->setDescription("Contexte de Crise : En période de crise, les ressources alimentaires et hydriques deviennent des éléments vitaux pour la survie. Une gestion efficace est cruciale pour la sécurité et le bien-être des individus et des groupes.
+        Objectifs de la Gestion : Les principaux objectifs de ce cours sont de garantir une répartition équitable des ressources, d'assurer leur stockage approprié et de gérer les surplus de manière responsable.");
+        $manager->persist($chapter6);
+        $this->addReference('chapter-approvisionnement-alimentation-3', $chapter6);
+
         $manager->flush();
     }
 }
