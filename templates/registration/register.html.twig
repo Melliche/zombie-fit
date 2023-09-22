@@ -4,8 +4,8 @@
 
 {% block body %}
     {{ form_errors(registrationForm) }}
-    <div class="bg-[#9fc53a] py-[50px]">
-        {{ form_start(registrationForm, {'attr': {'class': 'm-auto w-[30%] bg-[#0F1b09] rounded-[10%] pb-[30px]'}}) }}
+    <div class="bg-white py-[50px]">
+        {{ form_start(registrationForm, {'attr': {'class': 'm-auto w-[30%] bg-[#0F1b09] rounded-[10%] pb-[30px]  shadow-md shadow-blac'}}) }}
             <h2 class="text-[#9fc53a] text-center font-semibold text-[30px] pt-[10%] mb-[10%] uppercase">Inscription</h2>
             {{ form_row(registrationForm.email,  { 
                 'attr': {'class': 'bg-[#9fc53a] rounded mx-[30px] mb-[10%] flex w-[85%] ' },
@@ -21,7 +21,7 @@
                 'label_attr': {'class': 'text-[#9fc53a] ml-[30px]'} 
             }) }}
 
-            <button type="submit" class="btn text-[25px] rounded-full bg-[#9fc53a] text-[#0F1b09] px-[30px] flex m-auto">Register</button>
+            <button type="submit" class="btn text-[25px] rounded-full text-[#0F1b09] bg-[#9fc53a] border-2 border-black px-[30px] flex m-auto">Register</button>
         {{ form_end(registrationForm) }}
     </div>
 {% endblock %}

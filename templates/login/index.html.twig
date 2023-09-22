@@ -7,8 +7,8 @@
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
-    <section class="bg-[#9fc53a] py-[100px]">
-        <div class="m-auto w-[30%] bg-[#0F1b09] rounded-[10%]">
+    <section class="bg-white py-[100px]">
+        <div class="m-auto w-[30%] bg-[#0F1b09] rounded-[10%] shadow-md shadow-black">
             <h2 class="text-[#9fc53a] text-center font-semibold text-[30px] pt-[10%] mb-[10%] uppercase">Connexion</h2>
             <form class="flex flex-col" action="{{ path('app_login') }}" method="post">
                 <label class="text-[#9fc53a] ml-[30px] mb-[10px]" for="username">Email:</label>
@@ -22,7 +22,7 @@
 
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-                <button class="text-[25px] rounded-full bg-[#9fc53a] text-[#0F1b09] px-[30px] m-auto mb-[10%]" type="submit">Login</button>
+                <button class="text-[25px] rounded-full text-[#0F1b09] bg-[#9fc53a] border-2 border-black px-[30px] m-auto mb-[10%]" type="submit">Login</button>
             </form>
         </div>
     </section>
